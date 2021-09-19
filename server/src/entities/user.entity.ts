@@ -40,7 +40,7 @@ export class User extends BaseEntity {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @OneToMany(() => Recipe, (recipe) => recipe.user)
+  @OneToMany(() => Recipe, (recipe) => recipe.user, { eager: true })
   recipes: Recipe[];
 
   @OneToMany(() => Comment, (comment) => comment.user)
@@ -52,7 +52,7 @@ export class User extends BaseEntity {
   @OneToOne(() => CommentReaction)
   commentReaction: CommentReaction;
 
-  @OneToMany(() => Bookmark, (bookmark) => bookmark.user)
+  @OneToMany(() => Bookmark, (bookmark) => bookmark.user, { eager: true })
   bookmarks: Bookmark[];
 
   @OneToMany(() => Follow, (follow) => follow.follower)

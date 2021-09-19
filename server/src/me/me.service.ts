@@ -2,11 +2,13 @@ import {
   ConflictException,
   Injectable,
   InternalServerErrorException,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from 'src/entities/user.entity';
 import { Repository } from 'typeorm';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class MeService {
@@ -25,7 +27,7 @@ export class MeService {
       return {
         data: { ...createUserDto },
         statusCode: 201,
-        statusMsg: `saved successfully`,
+        message: `회원가입에 성공하였습니다.`,
       };
     } catch (err) {
       if (err.code === 'ER_DUP_ENTRY') {
@@ -35,5 +37,14 @@ export class MeService {
         throw new InternalServerErrorException();
       }
     }
+  }
+
+  async updateMyInfo(user: User, updateUserDto: UpdateUserDto): Promise<void> {
+    const { nickname, profile, userImage } = updateUserDto;
+
+    console.log(updateUserDto);
+    console.log(nickname);
+    console.log(profile);
+    console.log(userImage);
   }
 }
