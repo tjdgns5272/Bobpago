@@ -27,7 +27,7 @@
 ![]()
 
 
-## 🗣 우리를 소개합니다.
+## 🗣 팀원을 소개합니다.
 |[박성훈](https://github.com/tjdgns5272)|🏁 Full Stack|
 |------|---|
 |[박민수](https://github.com/pinion7)|🏁 Backend|
