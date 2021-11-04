@@ -264,7 +264,11 @@ const LandSection2: React.FC<LandSect2Props> = ({
           </GifTextContent>
         </GifTextContainer>
         <GifImageContainer>
+<<<<<<< HEAD
           <GifImage src="/img/LandingGif4.gif"></GifImage>
+=======
+          <GifImage src="/img/GifMypage.gif"></GifImage>
+>>>>>>> 461dc0bd3e34b9e5fadef5d3b7627bf922141a8a
         </GifImageContainer>
       </GifContainer>
       <LandingNecktie></LandingNecktie>
